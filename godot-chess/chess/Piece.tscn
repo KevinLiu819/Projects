@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://dvutw3gjrljc"]
+
+[ext_resource type="Texture2D" uid="uid://bd6h4x12s6yhj" path="res://assets/pieces/pieces_tilemap.png" id="1_axpvv"]
+[ext_resource type="Script" path="res://chess/Piece.gd" id="2_skl5a"]
+
+[node name="Piece" type="Sprite2D"]
+texture = ExtResource("1_axpvv")
+region_enabled = true
+script = ExtResource("2_skl5a")
