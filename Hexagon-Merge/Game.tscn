@@ -1,0 +1,57 @@
+[gd_scene load_steps=8 format=3 uid="uid://c8tjguo1pa3j1"]
+
+[ext_resource type="Texture2D" uid="uid://pbt7ubobqrt4" path="res://tiles.png" id="1_ijjw8"]
+[ext_resource type="Script" path="res://Game.gd" id="1_kl3tp"]
+[ext_resource type="Texture2D" uid="uid://raaphl6g0rah" path="res://tiles_numbered.png" id="2_61evk"]
+[ext_resource type="Script" path="res://Score.gd" id="4_y5432"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7w6st"]
+texture = ExtResource("1_ijjw8")
+texture_region_size = Vector2i(200, 200)
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pr7bk"]
+texture = ExtResource("2_61evk")
+texture_region_size = Vector2i(200, 200)
+4:0/0 = 0
+5:0/0 = 0
+3:0/0 = 0
+2:0/0 = 0
+1:0/0 = 0
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_jlan7"]
+tile_shape = 3
+tile_size = Vector2i(165, 185)
+sources/0 = SubResource("TileSetAtlasSource_7w6st")
+sources/1 = SubResource("TileSetAtlasSource_pr7bk")
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_kl3tp")
+
+[node name="Board" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_jlan7")
+format = 2
+layer_0/name = "Tile"
+layer_0/tile_data = PackedInt32Array(3, 393216, 0, 262144, 393216, 0, 262145, 393216, 0, 262146, 393216, 0, 262147, 393216, 0, 262148, 393216, 0, 262149, 393216, 0, 262150, 393216, 0, 262151, 393216, 0, 196614, 393216, 0, 196613, 393216, 0, 196612, 393216, 0, 196611, 393216, 0, 196610, 393216, 0, 196609, 393216, 0, 196608, 393216, 0, 131073, 393216, 0, 131074, 393216, 0, 131075, 393216, 0, 131076, 393216, 0, 131077, 393216, 0, 131078, 393216, 0, 65541, 393216, 0, 65540, 393216, 0, 65539, 393216, 0, 65538, 393216, 0, 65537, 393216, 0, 2, 393216, 0, 4, 393216, 0, 5, 393216, 0, 6, 393216, 0, 65542, 393216, 0, 131079, 393216, 0, 196615, 393216, 0, 262152, 393216, 0, 327687, 393216, 0, 327686, 393216, 0, 327685, 393216, 0, 327684, 393216, 0, 327683, 393216, 0, 327682, 393216, 0, 327681, 393216, 0, 327680, 393216, 0, 393217, 393216, 0, 393218, 393216, 0, 393219, 393216, 0, 393220, 393216, 0, 393221, 393216, 0, 393222, 393216, 0, 393223, 393216, 0, 458758, 393216, 0, 458757, 393216, 0, 458756, 393216, 0, 458755, 393216, 0, 458754, 393216, 0, 458753, 393216, 0, 524290, 393216, 0, 524291, 393216, 0, 524292, 393216, 0, 524293, 393216, 0, 524294, 393216, 0)
+layer_1/name = "Number"
+layer_1/enabled = true
+layer_1/modulate = Color(1, 1, 1, 1)
+layer_1/y_sort_enabled = false
+layer_1/y_sort_origin = 0
+layer_1/z_index = 0
+layer_1/tile_data = PackedInt32Array()
+
+[node name="Score" type="RichTextLabel" parent="."]
+offset_left = 1500.0
+offset_top = 50.0
+offset_right = 2000.0
+offset_bottom = 150.0
+theme_override_font_sizes/normal_font_size = 72
+script = ExtResource("4_y5432")
